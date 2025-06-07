@@ -1,0 +1,564 @@
+/* Estilos adicionales con temática de cafetería */
+
+:root {
+    --coffee-dark: #3a2218;
+    --coffee-medium: #8B4513;
+    --coffee-light: #D2B48C;
+    --cream: #FFF8DC;
+    --mocha: #9c7e65;
+}
+
+/* Fuentes y estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--coffee-dark);
+    background-color: #faf7f2;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Estilo de header para cafetería */
+.cafe-header {
+    background-color: var(--coffee-dark);
+    border-bottom: 3px solid var(--coffee-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+    border: 2px solid var(--coffee-light);
+}
+
+.logo-container h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: var(--coffee-light);
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--coffee-light);
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+    width: 100%;
+}
+
+/* Fondos con temática de café */
+.cafe-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/cafe1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.cafe-bg-light {
+    background-color: #f7f2ea;
+    position: relative;
+    overflow: hidden;
+}
+
+.cafe-bg-light::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/cafe-pattern.png');
+    background-size: 300px;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+/* Elementos con temática de café */
+.coffee-bean-divider {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--coffee-medium);
+    margin: 20px 0;
+}
+
+.specialty-card {
+    border: 1px solid var(--coffee-light);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.1);
+}
+
+.specialty-card h3 {
+    border-bottom: 2px solid var(--coffee-light);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: var(--coffee-dark);
+}
+
+/* Botones estilizados */
+.cafe-btn, button[type="submit"] {
+    background-color: var(--coffee-medium);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: var(--coffee-dark);
+    color: white;
+    padding-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.footer-section h3 {
+    color: var(--coffee-light);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--coffee-light);
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+.footer-section i {
+    margin-right: 10px;
+    color: var(--coffee-light);
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--coffee-light);
+    transform: translateY(-3px);
+}
+
+.social-icons i {
+    color: white;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.cafe-btn:hover {
+    background-color: var(--coffee-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Menú y productos de café */
+.coffee-menu-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coffee-menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.coffee-menu {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.coffee-menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.coffee-menu-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid var(--coffee-light);
+}
+
+.coffee-menu-item-info h3 {
+    margin-bottom: 5px;
+    color: var(--coffee-dark);
+}
+
+.coffee-menu-item-price {
+    font-weight: 600;
+    color: var(--coffee-medium);
+}
+
+/* Efectos y animaciones */
+.steam-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.steam-effect::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 40px;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    filter: blur(5px);
+    opacity: 0;
+    animation: steam 4s infinite ease-in-out;
+}
+
+@keyframes steam {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 0.7; }
+    100% { transform: translateY(-20px); opacity: 0; }
+}
+
+/* Mejoras responsivas */
+@media (max-width: 768px) {
+    .cafe-header {
+        flex-direction: column;
+        padding: 15px 5%;
+    }
+
+    .logo-container {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .login-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+
+/* Estilos específicos para login y registro */
+.login-container {
+    max-width: 450px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+}
+
+.login-container h2 {
+    color: var(--coffee-dark);
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--coffee-light);
+    padding-bottom: 10px;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.form-actions button {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-actions a {
+    color: var(--coffee-medium);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.form-actions a:hover {
+    color: var(--coffee-dark);
+    text-decoration: underline;
+}
+
+.register-option {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.register-option a {
+    color: var(--coffee-medium);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-option a:hover {
+    color: var(--coffee-dark);
+    text-decoration: underline;
+}
+
+/* Estilos para la página de eventos */
+.evento-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.evento-card:hover {
+    transform: translateY(-10px);
+}
+
+.evento-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--coffee-light);
+}
+
+.evento-card h3 {
+    padding: 20px 20px 10px;
+    font-size: 1.4rem;
+    color: var(--coffee-dark);
+}
+
+.evento-card p {
+    padding: 0 20px 20px;
+    color: #6d6d6d;
+}
+
+.btn-small {
+    display: inline-block;
+    background-color: var(--coffee-medium);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 0 20px 20px;
+    text-decoration: none;
+}
+
+.btn-small:hover {
+    background-color: var(--coffee-dark);
+    transform: translateY(-2px);
+}
+
+/* Estilos para formularios */
+.contact-form-container,
+.login-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto;
+    position: relative;
+    z-index: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--coffee-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--coffee-light);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--coffee-medium);
+    box-shadow: 0 0 5px rgba(139, 69, 19, 0.3);
+}
+
+/* Estilos adicionales para la página Nosotros */
+.team-member {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--coffee-light);
+}
+
+.team-member h4 {
+    margin: 15px 0 5px;
+    color: var(--coffee-dark);
+    text-align: center;
+}
+
+.team-member p {
+    color: var(--coffee-medium);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-item i {
+    font-size: 2.5rem;
+    color: var(--coffee-medium);
+    margin-bottom: 15px;
+}
+
+.value-item h4 {
+    margin-bottom: 10px;
+    color: var(--coffee-dark);
+}

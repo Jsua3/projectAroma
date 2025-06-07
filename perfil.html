@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Aroma Café</title>
+    <link rel="stylesheet" href="css/unified-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./img/cafe1.jpg" alt="Aroma Café Logo" class="logo">
+            <h1 class="steam-effect">Aroma Café</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li id="perfil-nav"><a href="perfil.html">Mi Perfil</a></li>
+                <li id="login-nav"><a href="login.html">Iniciar Sesión</a></li>
+                <li id="logout-nav" style="display: none;"><a href="#" id="logout-btn">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="coffee-bean-divider">
+        <i class="fas fa-coffee"></i><i class="fas fa-coffee"></i><i class="fas fa-coffee"></i>
+    </div>
+
+    <section class="cafe-bg-light">
+        <div id="profile-container" class="container">
+            <div class="user-welcome">
+                <h2>Mi Perfil</h2>
+                <div class="welcome-message">
+                    <i class="fas fa-user-circle"></i>
+                    <p>Hola, <span id="user-name">Usuario</span></p>
+                </div>
+                <p id="user-email" class="user-email"></p>
+            </div>
+
+            <div class="profile-content">
+                <div class="reservations-section specialty-card">
+                    <h3><i class="fas fa-calendar-check"></i> Mis Reservas de Eventos</h3>
+                    <div id="user-reservations" class="user-reservations">
+                        <!-- Las reservas del usuario se cargarán dinámicamente -->
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <button id="cerrar-sesion" class="btn btn-danger">
+                        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Aroma Café</h3>
+                <p>Tu lugar de encuentro favorito para disfrutar de buen café y momentos especiales.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horario</h3>
+                <p>Lunes a Viernes: 7:00 - 21:00</p>
+                <p>Sábado y Domingo: 8:00 - 22:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Café 123, Ciudad</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@aromacafe.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aroma Café - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="./js/auth.js"></script>
+    <script src="./js/perfil.js"></script>
+</body>
+</html>
