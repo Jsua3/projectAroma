@@ -80,19 +80,11 @@
 
     <section class="eventos-preview cafe-bg-light">
         <h2>Próximos Eventos</h2>
-        <div class="eventos-container">
-            <div class="evento-card">
-                <img src="./img/evento1.jpg" alt="Noche de Jazz">
-                <h3>Noche de Jazz</h3>
-                <p>Este viernes, disfruta de la mejor música en vivo mientras disfrutas de tu café favorito.</p>
-                <a href="eventos.html" class="btn-small">Ver más</a>
-            </div>
-            <div class="evento-card">
-                <img src="./img/evento2.jpg" alt="Taller de Barismo">
-                <h3>Taller de Barismo</h3>
-                <p>Aprende los secretos para preparar el café perfecto con nuestros expertos baristas.</p>
-                <a href="eventos.html" class="btn-small">Ver más</a>
-            </div>
+        <div class="eventos-container" id="eventos-destacados">
+            <!-- Los eventos destacados se cargarán dinámicamente -->
+        </div>
+        <div class="ver-todos-container">
+            <a href="eventos.html" class="btn">Ver todos los eventos</a>
         </div>
     </section>
 
@@ -127,7 +119,10 @@
         </div>
     </footer>
 
-    <script src="./js/auth.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/api-client.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/eventos.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

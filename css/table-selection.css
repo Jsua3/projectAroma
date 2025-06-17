@@ -1,0 +1,169 @@
+/* Estilos para la selección de mesas */
+
+.mesas-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.evento-info {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f3e9;
+    border-left: 5px solid #8c6e4a;
+    border-radius: 5px;
+}
+
+.evento-info h3 {
+    margin-top: 0;
+    color: #5c4020;
+}
+
+.evento-fecha, .evento-hora {
+    display: inline-block;
+    margin-right: 20px;
+    color: #6b5236;
+}
+
+.evento-fecha i, .evento-hora i {
+    margin-right: 5px;
+    color: #8c6e4a;
+}
+
+.mesas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.mesa-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mesa-disponible {
+    background-color: #f0f8ff;
+    border: 2px solid #a0d2eb;
+}
+
+.mesa-ocupada {
+    background-color: #fff0f0;
+    border: 2px solid #ffb3b3;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.mesa-seleccionada {
+    background-color: #e6ffe6;
+    border: 2px solid #4CAF50;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mesa-numero {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #5c4020;
+}
+
+.mesa-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #6b5236;
+}
+
+.mesa-info span {
+    margin: 3px 0;
+}
+
+.mesa-info i {
+    margin-right: 5px;
+    color: #8c6e4a;
+}
+
+.confirm-selection {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.confirm-selection button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.loading-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.loading-indicator i {
+    font-size: 40px;
+    color: #8c6e4a;
+    margin-bottom: 15px;
+}
+
+.error-message {
+    text-align: center;
+    padding: 20px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-radius: 5px;
+}
+
+.error-message i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #e74c3c;
+}
+
+.error-message button {
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .mesas-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .mesa-item {
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mesas-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .mesa-item {
+        height: 100px;
+        padding: 10px;
+    }
+
+    .mesa-numero {
+        font-size: 20px;
+    }
+
+    .mesa-info {
+        font-size: 12px;
+    }
+}

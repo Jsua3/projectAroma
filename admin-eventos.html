@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Eventos - Aroma Café</title>
+    <link rel="stylesheet" href="css/unified-style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./img/cafe1.jpg" alt="Logo Aroma Café" class="logo">
+            <h1 class="steam-effect">Aroma Café</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li id="perfil-nav"><a href="perfil.html">Mi Perfil</a></li>
+                <li id="admin-nav"><a href="admin.html" class="active">Admin</a></li>
+                <li id="login-nav"><a href="login.html">Iniciar Sesión</a></li>
+                <li id="logout-nav" style="display: none;"><a href="#" id="logout-btn">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="admin-container">
+        <div class="admin-sidebar">
+            <ul>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="admin-eventos.html" class="active">Eventos</a></li>
+                <li><a href="admin-reservas.html">Reservas</a></li>
+                <li><a href="admin-usuarios.html">Usuarios</a></li>
+            </ul>
+        </div>
+
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2>Administrar Eventos</h2>
+                <a href="admin-evento-form.html" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Nuevo Evento
+                </a>
+            </div>
+
+            <div class="search-filter">
+                <input type="text" id="search-eventos" placeholder="Buscar eventos..." class="search-input">
+            </div>
+
+            <div class="admin-table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Capacidad</th>
+                            <th>Precio</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eventos-list">
+                        <!-- Los eventos se cargarán dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="pagination" class="pagination">
+                <!-- La paginación se agregará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aroma Café - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/api-client.js"></script>
+    <script src="js/eventos.js"></script>
+    <script src="js/admin-eventos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar si el usuario es administrador
+            if (!estaLogueado() || !esAdmin()) {
+                window.location.href = 'login.html?redirect=admin-eventos.html';
+            } else {
+                cargarEventosAdmin();
+            }
+        });
+    </script>
+</body>
+</html>

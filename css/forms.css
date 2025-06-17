@@ -1,0 +1,92 @@
+/* Estilos para formularios */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #5d4037;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d7ccc8;
+    border-radius: 4px;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #8d6e63;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.2);
+}
+
+button[type="submit"] {
+    background-color: #8d6e63;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #6d4c41;
+}
+
+button[type="submit"]:disabled {
+    background-color: #d7ccc8;
+    cursor: not-allowed;
+}
+
+/* Estilos para mensajes de estado */
+.status-message {
+    margin-top: 20px;
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.status-message.info {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    border-left: 4px solid #1976d2;
+}
+
+.status-message.success {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border-left: 4px solid #4caf50;
+}
+
+.status-message.error {
+    background-color: #ffebee;
+    color: #b71c1c;
+    border-left: 4px solid #f44336;
+}
+
+.status-message.warning {
+    background-color: #fff8e1;
+    color: #ff6f00;
+    border-left: 4px solid #ffc107;
+}

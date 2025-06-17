@@ -1,11 +1,13 @@
 // Cliente de API para comunicarse con el backend
+// NOTA: Este archivo es una alternativa a api-client.js
+// Para evitar conflictos, este archivo no exporta variables globales
 
 // URL base de la API
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'http://localhost:3001/api';
 
 // Función para obtener el token de autenticación
 const getAuthToken = () => {
-  return localStorage.getItem('authToken');
+  return localStorage.getItem('token');
 };
 
 // Función para realizar peticiones a la API
@@ -212,7 +214,7 @@ const usersAPI = {
 };
 
 // Exportar todas las APIs
-const API = {
+const LocalAPI = {
   auth: authAPI,
   events: eventsAPI,
   tables: tablesAPI,
@@ -220,5 +222,10 @@ const API = {
   users: usersAPI
 };
 
-// Asignar al objeto global para uso directo en los scripts de HTML
-window.API = API;
+// Solo asignar al objeto global si no existe ya un objeto API
+if (!window.API) {
+  window.API = LocalAPI;
+  console.log('API local inicializada correctamente');
+} else {
+  console.log('Se detectó API existente, no se sobrescribirá');
+}

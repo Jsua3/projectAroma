@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Validación simple
             if (!nombre || !email || !asunto || !mensaje) {
-                alert('Por favor, completa todos los campos');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Campos incompletos',
+                    text: 'Por favor, completa todos los campos'
+                });
                 return;
             }
 
@@ -29,7 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function simulateFormSubmission(nombre, email, asunto, mensaje) {
     // Simular tiempo de procesamiento
     setTimeout(function() {
-        alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+        Swal.fire({
+            icon: 'success',
+            title: '¡Mensaje enviado!',
+            text: '¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.',
+            confirmButtonText: 'Aceptar'
+        });
 
         // Limpiar el formulario
         document.getElementById('contact-form').reset();

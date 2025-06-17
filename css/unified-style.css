@@ -1023,3 +1023,17 @@ footer {
         width: 90%;
     }
 }
+
+.evento-fecha {
+    color: #8b5a2b;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.evento-fecha i {
+    margin-right: 5px;
+}
+
+.ver-todos-container {
+    margin-top: 30px;
+}
