@@ -1,0 +1,9 @@
+Esta carpeta contiene las imágenes de los eventos.
+
+Necesitas añadir las siguientes imágenes:
+- jazz.jpg
+- barismo.jpg
+- cata.jpg
+- poesia.jpg
+- arte.jpg
+- lectura.jpg

@@ -26,9 +26,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const cerrarSesionBtn = document.getElementById('cerrar-sesion');
     if (cerrarSesionBtn) {
         cerrarSesionBtn.addEventListener('click', function() {
-            if (confirm('¿Estás seguro que deseas cerrar la sesión?')) {
-                logout();
-            }
+            Swal.fire({
+                icon: 'question',
+                title: 'Cerrar sesión',
+                text: '¿Estás seguro que deseas cerrar la sesión?',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, cerrar sesión',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    logout();
+                }
+            });
         });
     }
 
@@ -75,9 +84,28 @@ async function cargarReservasUsuario() {
     `;
 
     try {
-        // Obtener reservas desde la API
-        const response = await API.reservations.getUserReservations();
-        const reservas = response.data.reservations;
+        // Verificar si el usuario está autenticado
+        if (!isLoggedIn()) {
+            throw new Error('Usuario no autenticado');
+        }
+
+            // Obtener token de autenticación
+            const token = localStorage.getItem('token');
+
+            // Obtener reservas del servidor
+            const response = await fetch('http://localhost:3001/api/reservations', {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Error al cargar reservas');
+            }
+
+            const reservas = data.data.reservations;
 
         // Limpiar el contenedor
         reservasContainer.innerHTML = '';
@@ -133,9 +161,16 @@ async function cargarReservasUsuario() {
             // Agregar event listener para cancelar reserva
             const cancelarBtn = reservaElement.querySelector('.cancelar-reserva');
             if (cancelarBtn) {
-                cancelarBtn.addEventListener('click', function() {
+                cancelarBtn.addEventListener('click', async function() {
                     const reservaId = parseInt(this.getAttribute('data-id'));
-                    cancelarReserva(reservaId);
+                    try {
+                        await API.reservations.cancel(reservaId);
+                        mostrarAlerta('Éxito', 'Reserva cancelada correctamente', 'success');
+                        // Recargar las reservas para actualizar la interfaz
+                        cargarReservasUsuario();
+                    } catch (error) {
+                        mostrarAlerta('Error', error.message, 'error');
+                    }
                 });
             }
 
@@ -161,7 +196,17 @@ async function cargarReservasUsuario() {
 
 // Función para cancelar una reserva
 async function cancelarReserva(reservaId) {
-    if (confirm('¿Estás seguro que deseas cancelar esta reserva? Esta acción no se puede deshacer.')) {
+    const result = await Swal.fire({
+        icon: 'warning',
+        title: 'Cancelar reserva',
+        text: '¿Estás seguro que deseas cancelar esta reserva? Esta acción no se puede deshacer.',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, cancelar reserva',
+        cancelButtonText: 'No, mantener reserva',
+        confirmButtonColor: '#d33'
+    });
+
+    if (result.isConfirmed) {
         try {
             // Obtener el elemento de la reserva para animación
             const reservaElement = document.querySelector(`.cancelar-reserva[data-id="${reservaId}"]`).closest('.event-reservation');
@@ -171,8 +216,22 @@ async function cancelarReserva(reservaId) {
             reservaElement.style.opacity = '0';
             reservaElement.style.transform = 'translateX(20px)';
 
+            // Obtener token de autenticación
+            const token = localStorage.getItem('token');
+
             // Cancelar la reserva en el servidor
-            await API.reservations.cancelReservation(reservaId);
+            const response = await fetch(`http://localhost:3001/api/reservations/${reservaId}/cancel`, {
+                method: 'PATCH',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Error al cancelar reserva');
+            }
 
             // Recargar reservas después de la animación
             setTimeout(() => {

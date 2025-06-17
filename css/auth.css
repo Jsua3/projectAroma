@@ -1,0 +1,147 @@
+/* Estilos para las páginas de autenticación */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px - 300px);
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 30px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h2 {
+    color: #4a3621;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.auth-header p {
+    color: #777;
+    font-size: 0.95em;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.input-icon-wrapper {
+    position: relative;
+}
+
+.input-icon-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8b5a2b;
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="text"] {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.auth-form input:focus {
+    border-color: #8b5a2b;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(139, 90, 43, 0.2);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+.btn-auth {
+    width: 100%;
+    background-color: #8b5a2b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-auth:hover {
+    background-color: #6d4621;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.auth-footer a {
+    color: #8b5a2b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+.auth-sample-accounts {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.auth-sample-accounts p {
+    margin: 5px 0;
+}
+
+.sample-account {
+    padding: 8px;
+    border-left: 3px solid #8b5a2b;
+    margin-top: 10px;
+    background-color: rgba(139, 90, 43, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 20px;
+    }
+}
+

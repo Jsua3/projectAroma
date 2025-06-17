@@ -1,0 +1,359 @@
+/* Estilos para la página de eventos */
+/* Estilos específicos para la página de eventos */
+
+.eventos-section {
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.eventos-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    color: #5a4a42;
+}
+
+.eventos-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-filter {
+    background-color: transparent;
+    border: 1px solid #8b5a2b;
+    color: #8b5a2b;
+    padding: 8px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-filter:hover, .btn-filter.active {
+    background-color: #8b5a2b;
+    color: white;
+}
+
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.evento-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.evento-imagen {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.evento-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.evento-card:hover .evento-imagen img {
+    transform: scale(1.05);
+}
+
+.evento-precio {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #8b5a2b;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.evento-info {
+    padding: 20px;
+}
+
+.evento-info h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #4a3621;
+    font-family: 'Playfair Display', serif;
+}
+
+.evento-fecha, .evento-hora, .evento-capacidad {
+    margin: 8px 0;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.evento-fecha i, .evento-hora i, .evento-capacidad i {
+    margin-right: 5px;
+    color: #8b5a2b;
+}
+
+.evento-descripcion {
+    margin: 15px 0;
+    line-height: 1.5;
+    color: #333;
+}
+
+.btn-reservar {
+    display: inline-block;
+    background-color: #8b5a2b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-reservar:hover {
+    background-color: #6d4621;
+}
+
+.loading-indicator {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2em;
+    color: #8b5a2b;
+}
+
+.loading-indicator i {
+    font-size: 2em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.error-message {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff3f3;
+    border-radius: 10px;
+    color: #d63031;
+}
+
+.error-message i {
+    font-size: 2em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.no-events {
+    text-align: center;
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    color: #6c757d;
+}
+
+.no-events i {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.reload-btn {
+    margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .eventos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .eventos-filter {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-filter {
+        width: 80%;
+        margin-bottom: 8px;
+    }
+}
+.eventos-page-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.eventos-page-title h2 {
+    color: #5c4020;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.eventos-page-title p {
+    color: #6b5236;
+    font-size: 1.1rem;
+}
+
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.evento-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.evento-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.evento-card h3 {
+    color: #5c4020;
+    font-size: 1.5rem;
+    margin: 15px 20px 10px;
+}
+
+.evento-card p {
+    color: #6b5236;
+    margin: 0 20px 15px;
+    line-height: 1.6;
+}
+
+.evento-fecha, .evento-hora {
+    display: inline-block;
+    margin: 0 20px 10px;
+    color: #8c6e4a;
+    font-size: 0.9rem;
+}
+
+.evento-fecha i, .evento-hora i {
+    margin-right: 5px;
+}
+
+.evento-card .btn-small {
+    margin: 10px 20px 20px;
+    display: inline-block;
+}
+
+.reservar-btn {
+    background-color: #8c6e4a;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.reservar-btn:hover {
+    background-color: #5c4020;
+}
+
+.loading-indicator {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.loading-indicator i {
+    font-size: 40px;
+    color: #8c6e4a;
+    margin-bottom: 15px;
+}
+
+.error-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.error-message i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #e74c3c;
+}
+
+.reload-btn {
+    margin-top: 15px;
+    background-color: #8c6e4a;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.no-events {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 0;
+    color: #6b5236;
+}
+
+.no-events i {
+    font-size: 50px;
+    color: #8c6e4a;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .eventos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .eventos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .eventos-page-title h2 {
+        font-size: 2rem;
+    }
+}

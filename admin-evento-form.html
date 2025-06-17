@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Evento - Aroma Café</title>
+    <link rel="stylesheet" href="css/unified-style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./img/cafe1.jpg" alt="Logo Aroma Café" class="logo">
+            <h1 class="steam-effect">Aroma Café</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li id="perfil-nav"><a href="perfil.html">Mi Perfil</a></li>
+                <li id="admin-nav"><a href="admin.html" class="active">Admin</a></li>
+                <li id="login-nav"><a href="login.html">Iniciar Sesión</a></li>
+                <li id="logout-nav" style="display: none;"><a href="#" id="logout-btn">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="admin-container">
+        <div class="admin-sidebar">
+            <ul>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="admin-eventos.html" class="active">Eventos</a></li>
+                <li><a href="admin-reservas.html">Reservas</a></li>
+                <li><a href="admin-usuarios.html">Usuarios</a></li>
+            </ul>
+        </div>
+
+        <div class="admin-content">
+            <h2>Crear Nuevo Evento</h2>
+
+            <form id="form-evento" class="admin-form">
+                <div class="form-group">
+                    <label for="event-title">Título del Evento</label>
+                    <input type="text" id="event-title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="event-description">Descripción</label>
+                    <textarea id="event-description" name="description" rows="4" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event-date">Fecha</label>
+                        <input type="date" id="event-date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-time">Hora</label>
+                        <input type="time" id="event-time" name="time" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event-capacity">Capacidad</label>
+                        <input type="number" id="event-capacity" name="capacity" min="1" value="20" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-price">Precio (€)</label>
+                        <input type="number" id="event-price" name="price" min="0" step="0.01" value="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="event-image">URL de la Imagen</label>
+                    <input type="text" id="event-image" name="image" value="./img/eventos/default.jpg">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="event-active" name="isActive" checked>
+                    <label for="event-active">Evento Activo</label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Guardar Evento</button>
+                    <a href="admin-eventos.html" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aroma Café - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/api-client.js"></script>
+    <script src="js/eventos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar si el usuario es administrador
+            if (!estaLogueado() || !esAdmin()) {
+                window.location.href = 'login.html?redirect=admin-evento-form.html';
+            }
+        });
+    </script>
+</body>
+</html>

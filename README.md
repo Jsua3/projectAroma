@@ -1,5 +1,105 @@
  # Aroma Café - Sitio Web
+# Aroma Café - Sistema de Reservas
 
+Este proyecto implementa un sistema completo para la cafetería Aroma Café, permitiendo a los usuarios registrarse, iniciar sesión, ver eventos, seleccionar mesas y realizar reservas.
+
+## Estructura del Proyecto
+
+- **Frontend**: Interfaz de usuario en HTML, CSS y JavaScript
+- **Backend**: API REST en Node.js con Express y MySQL
+
+## Tecnologías Utilizadas
+
+### Frontend
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- SweetAlert2 para notificaciones
+
+### Backend
+- Node.js
+- Express
+- MySQL
+- Sequelize (ORM)
+- JWT para autenticación
+
+## Instalación y Configuración
+
+### Requisitos Previos
+
+- Node.js (v14+)
+- MySQL (v5.7+)
+
+### Pasos de Instalación
+
+1. **Clonar el repositorio**
+
+```bash
+git clone <url-del-repositorio>
+cd aroma-cafe
+```
+
+2. **Configurar la Base de Datos**
+
+- Crear una base de datos MySQL llamada `aroma_cafe`
+- Ejecutar el script SQL de inicialización:
+
+```bash
+mysql -u tu_usuario -p aroma_cafe < server/scripts/db-init.sql
+```
+
+3. **Configurar el Backend**
+
+```bash
+cd server
+npm install
+```
+
+Crea un archivo `.env` en la carpeta `server` con el siguiente contenido (modifica según tu configuración):
+
+```
+PORT=3001
+DB_HOST=localhost
+DB_USER=tu_usuario
+DB_PASSWORD=tu_contraseña
+DB_NAME=aroma_cafe
+DB_PORT=3306
+JWT_SECRET=aroma_cafe_secret_key
+JWT_EXPIRES_IN=7d
+```
+
+4. **Iniciar el Servidor**
+
+```bash
+cd server
+npm start
+```
+
+5. **Iniciar el Frontend**
+
+El frontend es estático, así que puedes usar cualquier servidor web. Para desarrollo, puedes usar la extensión Live Server de VSCode o simplemente abrir los archivos HTML en tu navegador.
+
+## Características
+
+- **Registro e inicio de sesión de usuarios**
+- **Visualización de eventos de la cafetería**
+- **Selección de mesas para eventos**
+- **Reservas de mesas para eventos**
+- **Gestión de perfil de usuario**
+- **Cancelación de reservas**
+
+## Roles de Usuario
+
+- **Usuario Regular**: Puede ver eventos, hacer reservas y gestionar su perfil
+- **Administrador**: Puede gestionar eventos, mesas y ver todas las reservas
+
+## Endpoints de la API
+
+Consulta el archivo README.md en la carpeta `server` para ver la documentación completa de la API.
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
 Este proyecto es un sitio web para la cafetería "Aroma Café", desarrollado con HTML, CSS y JavaScript. El sitio permite a los usuarios ver información sobre la cafetería, su menú, eventos, y reservar mesas para eventos específicos.
 
 ## Características

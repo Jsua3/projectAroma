@@ -1,0 +1,157 @@
+/**
+ * Estilos para las páginas de autenticación (login y registro)
+ */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 70vh;
+}
+
+.auth-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.auth-card h1 {
+  color: #5c3e2e;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.auth-card .subtitle {
+  color: #777;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #b08968;
+  outline: none;
+}
+
+.form-group small {
+  display: block;
+  color: #777;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary {
+  background-color: #b08968;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #9a7657;
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #fff8f8;
+  border-left: 4px solid #e74c3c;
+  color: #e74c3c;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.success-message {
+  background-color: #f0f8f0;
+  border-left: 4px solid #2ecc71;
+  color: #2ecc71;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #666;
+}
+
+.auth-footer a {
+  color: #b08968;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 20px;
+  }
+
+  .auth-card h1 {
+    font-size: 24px;
+  }
+
+  .form-group input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
