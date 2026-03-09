@@ -114,7 +114,7 @@ async function cargarEventoYMesas(eventId) {
 
     try {
         // Obtener información del evento y mesas disponibles
-        const response = await fetch(`http://localhost:3001/api/events/${eventId}`);
+        const response = await fetch(`https://projectaroma-production.up.railway.app/api/events/${eventId}`);
         const data = await response.json();
 
         if (!response.ok) {
@@ -252,7 +252,7 @@ async function confirmarReserva(eventId) {
         const token = localStorage.getItem('token');
 
         // Realizar petición para crear reserva
-        const response = await fetch('http://localhost:3001/api/reservations', {
+        const response = await fetch('https://projectaroma-production.up.railway.app/api/reservations', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -350,7 +350,7 @@ function seleccionarMesa(mesaElement, mesaId) {
 
     async function verificarConfiguracionMesas() {
     try {
-        const response = await fetch('http://localhost:3001/api/setup/status');
+        const response = await fetch('https://projectaroma-production.up.railway.app/api/setup/status');
         const data = await response.json();
 
         if (!response.ok) {
@@ -389,7 +389,7 @@ function seleccionarMesa(mesaElement, mesaId) {
             throw new Error('No hay sesión activa');
         }
 
-        const response = await fetch('http://localhost:3001/api/setup/tables', {
+        const response = await fetch('https://projectaroma-production.up.railway.app/api/setup/tables', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

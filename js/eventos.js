@@ -9,7 +9,7 @@
  * - Administrar eventos (para usuarios admin)
  */
 
-let apiBaseUrl = 'http://localhost:3001/api';
+let apiBaseUrl = 'https://projectaroma-production.up.railway.app/api';
 
 // Configuración inicial cuando se carga el documento
 document.addEventListener('DOMContentLoaded', function() {
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function verificarConfiguracion() {
     try {
-        const response = await fetch('http://localhost:3001/api/setup/status');
+        const response = await fetch('https://projectaroma-production.up.railway.app/api/setup/status');
         const data = await response.json();
 
         if (!response.ok) {
@@ -565,7 +565,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function verificarConfiguracion() {
     try {
-        const response = await fetch('http://localhost:3001/api/setup/status');
+        const response = await fetch('https://projectaroma-production.up.railway.app/api/setup/status');
         const data = await response.json();
 
         if (!response.ok) {
@@ -603,7 +603,7 @@ document.addEventListener('DOMContentLoaded', function() {
             throw new Error('No hay sesión activa');
         }
 
-        const response = await fetch('http://localhost:3001/api/setup/events', {
+        const response = await fetch('https://projectaroma-production.up.railway.app/api/setup/events', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

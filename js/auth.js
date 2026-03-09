@@ -3,7 +3,7 @@
  */
 
 // URL base de la API
-const apiUrl = 'http://localhost:3001/api';
+const apiUrl = 'https://projectaroma-production.up.railway.app/api';
 
 /**
  * Verifica si el usuario está logueado

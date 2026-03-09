@@ -93,7 +93,7 @@ async function cargarReservasUsuario() {
             const token = localStorage.getItem('token');
 
             // Obtener reservas del servidor
-            const response = await fetch('http://localhost:3001/api/reservations', {
+            const response = await fetch('https://projectaroma-production.up.railway.app/api/reservations', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -220,7 +220,7 @@ async function cancelarReserva(reservaId) {
             const token = localStorage.getItem('token');
 
             // Cancelar la reserva en el servidor
-            const response = await fetch(`http://localhost:3001/api/reservations/${reservaId}/cancel`, {
+            const response = await fetch(`https://projectaroma-production.up.railway.app/api/reservations/${reservaId}/cancel`, {
                 method: 'PATCH',
                 headers: {
                     'Authorization': `Bearer ${token}`

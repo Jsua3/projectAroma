@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             try {
                 // Enviar solicitud de inicio de sesión al servidor
-                const response = await fetch('http://localhost:3001/api/auth/login', {
+                const response = await fetch('https://projectaroma-production.up.railway.app/api/auth/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
