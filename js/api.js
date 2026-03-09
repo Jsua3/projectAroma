@@ -3,7 +3,7 @@
 // Para evitar conflictos, este archivo no exporta variables globales
 
 // URL base de la API
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'https://projectaroma-production.up.railway.app/api';
 
 // Función para obtener el token de autenticación
 const getAuthToken = () => {
