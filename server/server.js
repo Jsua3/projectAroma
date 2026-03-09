@@ -10,6 +10,7 @@ const eventRoutes = require('./routes/eventRoutes');
 const tableRoutes = require('./routes/tableRoutes');
 const reservationRoutes = require('./routes/reservationRoutes');
 const userRoutes = require('./routes/userRoutes');
+const setupRoutes = require('./routes/setupRoutes');
 
 // Inicializar Express
 const app = express();
@@ -24,6 +25,7 @@ app.use('/api/events', eventRoutes);
 app.use('/api/tables', tableRoutes);
 app.use('/api/reservations', reservationRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/setup', setupRoutes);
 
 // Ruta por defecto
 app.get('/', (req, res) => {
